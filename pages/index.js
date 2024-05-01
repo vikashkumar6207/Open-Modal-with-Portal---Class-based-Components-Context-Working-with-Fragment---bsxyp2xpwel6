@@ -11,7 +11,7 @@ const HomePage = () => {
 
   return (
     <div>
-      <button onClick={()=> modalIsOpen(true)}>Open Modal</button>
+      <button onClick={() => setModalOpen(true)}>Open Modal</button>
 
       <Modal isOpen={isModalOpen} onClose={() => setModalOpen(false)}>
         <h2>This is a Modal</h2>
