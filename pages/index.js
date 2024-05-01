@@ -1,26 +1,22 @@
+"use client"
+
 import { useState } from 'react';
 import Modal from '../components/Modal';
 
 const HomePage = () => {
   
-  const [modalIsOpen, setIsOpen] = useState(false);
-  function openModal() {
-    setIsOpen(true);
-  }
-
-  function closeModal() {
-    setIsOpen(false);
-  }
+  const [isModalOpen, setModalOpen] = useState(false);
+  
 
 
   return (
     <div>
-      <button onClick={openModal}>Open Modal</button>
+      <button onClick={()=> modalIsOpen(true)}>Open Modal</button>
 
-      <Modal isOpen={modalIsOpen}>
+      <Modal isOpen={isModalOpen} onClose={() => setModalOpen(false)}>
         <h2>This is a Modal</h2>
         <p>Using React Portals with Next.js</p>
-        <button onClick={closeModal}>Close Modal</button>
+        <button  onClick={() => setModalOpen(false)}>Close Modal</button>
       </Modal>
     </div>
   );
